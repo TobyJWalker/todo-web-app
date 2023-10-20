@@ -6,7 +6,7 @@ def _reset_tables():
     db.create_tables([User])
 
 # create empty tables if they don't exist
-def create_tables():
+def create_db_tables():
     db.create_tables([User])
 
 # seed the database with test data
