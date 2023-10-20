@@ -7,10 +7,8 @@ from seeds.seed_db import *
 # call to create tables in case they haven't already been created
 create_db_tables()
 
-# create a Flask app instance
+# create a Flask app instance and set secret key
 app = Flask(__name__)
-
-# set the secret key for the session
 app.secret_key = os.environ.get("FLASK_SECRET_KEY")
 
 # create index route
