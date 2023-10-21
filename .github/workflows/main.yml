@@ -51,3 +51,6 @@ jobs:
           pipenv run pytest
         env:
           APP_ENV: test
+          POSTGRES_USER: tobywalker
+          POSTGRES_PASSWORD: testing
+          POSTGRES_DB: todo-test-db
