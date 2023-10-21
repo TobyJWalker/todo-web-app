@@ -15,9 +15,17 @@ def index():
 
 # start the server
 if __name__ == "__main__":
-    app.run(
-        debug=True, 
-        host='0.0.0.0', 
-        port=5001, 
-        ssl_context=('todo-cert.pem', 'todo-cert-key.pem')
-        )
+    if os.environ.get("APP_ENV") == "dev":
+        app.run(
+            debug=True, 
+            host='0.0.0.0', 
+            port=5001, 
+            ssl_context=('todo-cert.pem', 'todo-cert-key.pem')
+            )
+    else:
+        app.run(
+            debug=False, 
+            host='0.0.0.0',
+            port=int(os.environ.get("PORT", 5000)),
+            ssl_context=('todo-cert.pem', 'todo-cert-key.pem')
+            )
