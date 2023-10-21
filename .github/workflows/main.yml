@@ -16,10 +16,10 @@ jobs:
         image: postgres:13.3
         # This is the port that the container exposes
         ports:
-          - 5432/tcp
+          - 5432:5432
         # These are environment variables that we want to set
         env:
-          POSTGRES_USER: tobywalker
+          POSTGRES_USER: tester
           POSTGRES_PASSWORD: testing
           POSTGRES_DB: todo-test-db
         options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
