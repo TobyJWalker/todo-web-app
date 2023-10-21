@@ -5,7 +5,7 @@ APP_ENV = os,os.environ.get("APP_ENV")
 
 if APP_ENV == "test":
     db = peewee.PostgresqlDatabase(
-        'test-todo-db', user='tester', password='testing', host='localhost', port=5432
+        'todo-test-db', user='tester', password='testing', host='localhost', port=5432
     )
 
 else:
