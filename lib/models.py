@@ -4,14 +4,12 @@ from datetime import datetime
 APP_ENV = os,os.environ.get("APP_ENV")
 
 if APP_ENV == "test":
-    DB_NAME = os.environ.get("POSTGRES_DB")
-    DB_USER = os.environ.get("POSTGRES_USER")
-    DB_PASSWORD = os.environ.get("POSTGRES_PASSWORD")
-    DB_HOST = 'localhost'
-    DB_PORT = 5432
+    DB_NAME = os.environ.get("TEST_DB_NAME")
+    DB_USER = os.environ.get("TEST_DB_USER")
+    DB_PASSWORD = os.environ.get("TEST_DB_PASSWORD")
 
     db = peewee.PostgresqlDatabase(
-        DB_NAME, user=DB_USER, password=DB_PASSWORD, host=DB_HOST, port=DB_PORT
+        DB_NAME, user=DB_USER, password=DB_PASSWORD, host='localhost', port=5432
     )
 
 else:
