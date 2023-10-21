@@ -46,7 +46,7 @@ jobs:
       # Create the database tables
       - name: Create tables
         run: |
-          pipenv run python db_setup.py
+          pipenv run python lib/models.py
 
       # Now we run our tests
       - name: Test with pytest
