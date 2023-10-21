@@ -16,7 +16,7 @@ jobs:
         image: postgres:13.3
         # This is the port that the container exposes
         ports:
-          - 5432:5432
+          - 5432/tcp
         # These are environment variables that we want to set
         env:
           POSTGRES_USER: tobywalker
