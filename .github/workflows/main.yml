@@ -43,10 +43,6 @@ jobs:
           pipenv install --dev
           pipenv run playwright install
       
-      # This step starts the Postgres container
-      - name: Start Postgres
-        run: docker start postgres
-      
       # Create the database tables
       - name: Create tables
         run: |
