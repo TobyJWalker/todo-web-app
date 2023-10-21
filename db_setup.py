@@ -6,4 +6,8 @@ def setup_test_data():
 
 # call the create_tables function
 def setup_tables():
-    create_tables()
+    create_db_tables()
+
+# setup tables if ran directly
+if __name__ == "__main__":
+    setup_tables()
