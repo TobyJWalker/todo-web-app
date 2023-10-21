@@ -1,9 +1,6 @@
 # The name of the workflow
 name: Test and Deploy
 
-# uses playwright
-
-
 # This workflow will run on any push to the repository
 on: push
 
@@ -25,6 +22,7 @@ jobs:
           POSTGRES_USER: tobywalker
           POSTGRES_PASSWORD: testing
           POSTGRES_DB: todo-test-db
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
 
     steps:
       # Each step has a name, some code, and some options
