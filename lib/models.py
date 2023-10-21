@@ -18,3 +18,11 @@ class User(peewee.Model):
 
     class Meta:
         database = db
+
+def initialize_db():
+    db.connect()
+    db.create_tables([User])
+    db.close()
+
+if __name__ == "__main__":
+    initialize_db()
