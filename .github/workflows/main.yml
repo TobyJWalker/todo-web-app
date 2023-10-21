@@ -42,6 +42,15 @@ jobs:
           pip install pipenv
           pipenv install --dev
           pipenv run playwright install
+      
+      # This step starts the Postgres container
+      - name: Start Postgres
+        run: docker start postgres
+      
+      # Create the database tables
+      - name: Create tables
+        run: |
+          pipenv run python db_setup.py
 
       # Now we run our tests
       - name: Test with pytest
