@@ -2,10 +2,7 @@ import os, peewee, re
 from hashlib import sha256
 from flask import Flask, request, render_template, redirect, session
 from datetime import datetime
-from seeds.seed_db import *
-
-# call to create tables in case they haven't already been created
-create_db_tables()
+from lib.models import *
 
 # create a Flask app instance and set secret key
 app = Flask(__name__)
